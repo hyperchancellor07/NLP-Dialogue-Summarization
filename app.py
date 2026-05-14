@@ -1,4 +1,3 @@
-```python
 import time
 import streamlit as st
 
@@ -241,4 +240,3 @@ st.markdown("---")
 st.caption(
     "Built using Transformers, PyTorch, Hugging Face, and Streamlit 🚀"
 )
-```
