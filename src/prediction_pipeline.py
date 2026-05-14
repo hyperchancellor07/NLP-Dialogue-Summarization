@@ -7,7 +7,7 @@ from transformers import (
 )
 
 
-MODEL_NAME = "your-username/pegasus-samsum-full-finetuned"
+MODEL_NAME = "hyperchancellor07/pegasus-samsum-dialogue-summarizer"
 
 
 class DialogueSummarizer:
