@@ -1,0 +1,4 @@
+Model,Semantic Similarity,Sparse Similarity,HDRS
+Baseline PEGASUS,0.1657,0.0,0.116
+Full Fine-Tuned PEGASUS,0.7574,-0.1609,0.4819
+LoRA PEGASUS,0.3418,-0.0275,0.231
