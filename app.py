@@ -49,72 +49,36 @@ st.markdown(
     .title-text {
         font-size: 48px;
         font-weight: 800;
-        color: #6366F1;
         margin-bottom: 0.2rem;
     }
 
     .subtitle-text {
         font-size: 18px;
-        color: #9CA3AF;
+        opacity: 0.8;
         margin-bottom: 2rem;
     }
 
     .stTextArea textarea {
+
         border-radius: 14px;
+
         font-size: 16px;
-        padding: 1rem;
-    }
-
-    .summary-container {
-
-        background-color: #111827;
-
-        padding: 1.5rem;
-
-        border-radius: 18px;
-
-        border: 1px solid #374151;
-
-        margin-top: 1rem;
-    }
-
-    .summary-title {
-
-        font-size: 22px;
-
-        font-weight: 700;
-
-        color: #F9FAFB;
-
-        margin-bottom: 1rem;
-    }
-
-    .summary-text {
-
-        font-size: 18px;
-
-        line-height: 1.8;
-
-        color: #E5E7EB;
-    }
-
-    .feature-card {
-
-        background-color: #1F2937;
 
         padding: 1rem;
+    }
+
+    div[data-testid="metric-container"] {
 
         border-radius: 14px;
 
-        margin-bottom: 1rem;
-
-        border: 1px solid #374151;
+        padding: 10px;
     }
 
     </style>
     """,
     unsafe_allow_html=True,
 )
+
 
 
 # ============================================================
