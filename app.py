@@ -1,4 +1,3 @@
-```python id="5fj2kx"
 import time
 
 import streamlit as st
