@@ -1,0 +1,54 @@
+{
+    "timestamp": "2026-02-01T13:37:27.568364",
+    "stats": {
+        "train": {
+            "num_samples": 14731,
+            "dialogue_length": {
+                "mean": 93.79274998302898,
+                "median": 73.0,
+                "p95": 237.0
+            },
+            "summary_length": {
+                "mean": 20.318444097481503,
+                "median": 18.0,
+                "p95": 43.0
+            }
+        },
+        "validation": {
+            "num_samples": 818,
+            "dialogue_length": {
+                "mean": 91.64180929095355,
+                "median": 70.0,
+                "p95": 225.7499999999999
+            },
+            "summary_length": {
+                "mean": 20.283618581907092,
+                "median": 18.0,
+                "p95": 43.0
+            }
+        },
+        "test": {
+            "num_samples": 819,
+            "dialogue_length": {
+                "mean": 95.5079365079365,
+                "median": 74.0,
+                "p95": 252.29999999999973
+            },
+            "summary_length": {
+                "mean": 20.017094017094017,
+                "median": 18.0,
+                "p95": 41.0
+            }
+        }
+    },
+    "pretraining_drift": {
+        "validation": {
+            "dialogue_length_mean_shift": -2.1509406920754373,
+            "summary_length_mean_shift": -0.03482551557441127
+        },
+        "test": {
+            "dialogue_length_mean_shift": 1.7151865249075229,
+            "summary_length_mean_shift": -0.30135008038748623
+        }
+    }
+}

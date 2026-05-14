@@ -1,0 +1,40 @@
+{
+    "timestamp": "2026-02-01T13:37:40.071994",
+    "structure_validation": {
+        "train": {
+            "missing_columns": [],
+            "null_dialogues": 0,
+            "null_summaries": 0,
+            "empty_dialogues": 0,
+            "empty_summaries": 0
+        },
+        "validation": {
+            "missing_columns": [],
+            "null_dialogues": 0,
+            "null_summaries": 0,
+            "empty_dialogues": 0,
+            "empty_summaries": 0
+        },
+        "test": {
+            "missing_columns": [],
+            "null_dialogues": 0,
+            "null_summaries": 0,
+            "empty_dialogues": 0,
+            "empty_summaries": 0
+        }
+    },
+    "length_validation": {
+        "train": {
+            "short_dialogues": 0,
+            "short_summaries": 4
+        },
+        "validation": {
+            "short_dialogues": 0,
+            "short_summaries": 0
+        },
+        "test": {
+            "short_dialogues": 0,
+            "short_summaries": 0
+        }
+    }
+}

@@ -1,0 +1,44 @@
+
+# GLOBAL PROJECT CONFIG
+artifacts_root: artifacts
+
+# DATA INGESTION
+data_ingestion:
+  dataset_name: samsum
+  dataset_config: samsum
+  raw_data_dir: artifacts/data/raw
+  processed_data_dir: artifacts/data/processed
+
+# DATA TRANSFORMATION
+data_transformation:
+  tokenizer_name: google/pegasus-large
+  max_input_length: 1024
+  max_target_length: 128
+  tokenized_data_dir: artifacts/tokenizer
+
+# MODEL TRAINING
+model_trainer:
+  model_name: google/pegasus-samsum
+  output_dir: artifacts/model
+  epochs: 2
+  train_batch_size: 1
+  eval_batch_size: 1
+  learning_rate: 2e-5
+  weight_decay: 0.01
+  logging_steps: 50
+  save_steps: 500
+  evaluation_strategy: steps
+  fp16: true
+
+# MODEL EVALUATION
+model_evaluation:
+  metric: rouge
+  evaluation_dir: artifacts/evaluation
+
+# STREAMLIT / PREDICTION
+prediction:
+  model_dir: artifacts/model
+  tokenizer_dir: artifacts/tokenizer
+  max_summary_length: 128
+
+

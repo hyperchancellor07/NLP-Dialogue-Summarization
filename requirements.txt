@@ -1,0 +1,33 @@
+# Core Python utilities
+pyyaml
+python-box
+tqdm
+
+# NLP & Deep Learning
+torch
+transformers
+datasets
+sentencepiece
+accelerate
+
+# Evaluation
+rouge-score
+evaluate
+
+# Experimentation & Visualization (notebooks)
+numpy
+pandas
+matplotlib
+seaborn
+
+# Streamlit Frontend
+streamlit
+
+# Optional (safe to have, useful later)
+scikit-learn
+transformers
+sentencepiece
+streamlit
+torch
+accelerate
+huggingface_hub
