@@ -111,19 +111,6 @@ st.markdown(
         border: 1px solid #374151;
     }
 
-    .metric-container {
-
-        background-color: #111827;
-
-        padding: 1rem;
-
-        border-radius: 16px;
-
-        border: 1px solid #374151;
-
-        text-align: center;
-    }
-
     </style>
     """,
     unsafe_allow_html=True,
@@ -148,7 +135,7 @@ st.markdown(
     <div class="subtitle-text">
 
     Transformer-based conversational summarization
-    with semantic robustness analysis.
+    with lightweight robustness analysis.
 
     </div>
     ''',
@@ -246,7 +233,7 @@ with right_col:
         <h4>⚡ Features</h4>
 
         • Dialogue Summarization <br>
-        • Semantic Robustness Analysis <br>
+        • Lightweight Robustness Analysis <br>
         • HDRS Scoring <br>
         • Hugging Face Deployment <br>
         • Streamlit Interface
@@ -259,6 +246,7 @@ with right_col:
 # ============================================================
 # GENERATION SECTION
 # ============================================================
+
 if generate_button:
 
     if user_input.strip() == "":
@@ -270,7 +258,7 @@ if generate_button:
     else:
 
         with st.spinner(
-            "🧠 Generating summary and robustness analysis..."
+            "🧠 Generating summary..."
         ):
 
             time.sleep(1)
@@ -314,21 +302,17 @@ if generate_button:
         # ====================================================
         # HDRS ANALYSIS
         # ====================================================
-        st.markdown("## 📊 Robustness Analysis")
-        metric_col1, metric_col2, metric_col3 = st.columns(3)
-        metric_col1.metric(
-
-            "Semantic Similarity",
-
-            scores["semantic_similarity"],
+        st.markdown(
+            "## 📊 Robustness Analysis"
         )
-        metric_col2.metric(
+        metric_col1, metric_col2 = st.columns(2)
+        metric_col1.metric(
 
             "Sparse Similarity",
 
-            scores["sparse_similarity"],
+            scores["Sparse Similarity"],
         )
-        metric_col3.metric(
+        metric_col2.metric(
 
             "HDRS Score",
 
@@ -340,5 +324,5 @@ if generate_button:
 st.markdown("---")
 st.caption(
 
-    "Built using Transformers, PyTorch, Hugging Face, Sentence Transformers, and Streamlit 🚀"
+    "Built using Transformers, PyTorch, Hugging Face, BM25, and Streamlit 🚀"
 )
