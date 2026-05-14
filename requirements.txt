@@ -3,6 +3,5 @@ transformers
 torch
 sentencepiece
 accelerate
-sentence-transformers
-scikit-learn
 rank_bm25
+
