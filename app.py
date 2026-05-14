@@ -1,8 +1,13 @@
-
+```python
+import time
 import streamlit as st
 
 from src.prediction_pipeline import DialogueSummarizer
 
+
+# ============================================================
+# PAGE CONFIG
+# ============================================================
 
 st.set_page_config(
     page_title="Dialogue Summarization System",
@@ -11,8 +16,11 @@ st.set_page_config(
 )
 
 
-@st.cache_resource
+# ============================================================
+# LOAD MODEL
+# ============================================================
 
+@st.cache_resource
 def load_model():
     return DialogueSummarizer()
 
@@ -20,45 +28,75 @@ def load_model():
 summarizer = load_model()
 
 
+# ============================================================
+# CUSTOM CSS
+# ============================================================
+
 st.markdown(
     """
     <style>
+
     .main {
         padding-top: 1rem;
     }
 
     .title-text {
-        font-size: 42px;
+        font-size: 48px;
         font-weight: 700;
-        color: #4F46E5;
-        margin-bottom: 0.2rem;
+        color: #6366F1;
+        margin-bottom: 0.3rem;
     }
 
     .subtitle-text {
         font-size: 18px;
-        color: #6B7280;
+        color: #9CA3AF;
         margin-bottom: 2rem;
     }
 
     .stTextArea textarea {
-        border-radius: 12px;
+        border-radius: 14px;
         font-size: 16px;
+        padding: 1rem;
     }
 
-    .summary-box {
-        background-color: #F3F4F6;
-        padding: 1.2rem;
-        border-radius: 14px;
-        border: 1px solid #E5E7EB;
-        font-size: 17px;
-        line-height: 1.7;
-        color: #111827;
+    .summary-container {
+        background-color: #111827;
+        padding: 1.5rem;
+        border-radius: 18px;
+        border: 1px solid #374151;
+        margin-top: 1rem;
     }
+
+    .summary-title {
+        font-size: 22px;
+        font-weight: 700;
+        color: #F9FAFB;
+        margin-bottom: 1rem;
+    }
+
+    .summary-text {
+        font-size: 18px;
+        line-height: 1.8;
+        color: #E5E7EB;
+    }
+
+    .feature-card {
+        background-color: #1F2937;
+        padding: 1rem;
+        border-radius: 14px;
+        margin-bottom: 1rem;
+        border: 1px solid #374151;
+    }
+
     </style>
     """,
     unsafe_allow_html=True,
 )
 
+
+# ============================================================
+# HEADER
+# ============================================================
 
 st.markdown(
     '<div class="title-text">🧠 Dialogue Summarization System</div>',
@@ -71,14 +109,136 @@ st.markdown(
 )
 
 
-col1, col2 = st.columns([1.2, 1])
+# ============================================================
+# LAYOUT
+# ============================================================
+
+left_col, right_col = st.columns([1.5, 1])
 
 
-with col1:
+# ============================================================
+# LEFT COLUMN
+# ============================================================
+
+with left_col:
 
     user_input = st.text_area(
         "💬 Enter Conversation",
-        placeholder="Paste conversation here...",
+        placeholder="Paste your dialogue or conversation here...",
         height=420,
     )
 
+    generate_button = st.button(
+        "🚀 Generate Summary",
+        use_container_width=True,
+    )
+
+
+# ============================================================
+# RIGHT COLUMN
+# ============================================================
+
+with right_col:
+
+    st.markdown("## 📌 System Information")
+
+    st.markdown(
+        """
+        <div class="feature-card">
+
+        ### 🤖 Model
+
+        PEGASUS Transformer
+
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        """
+        <div class="feature-card">
+
+        ### 📚 Dataset
+
+        SAMSum Dialogue Dataset
+
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+    st.markdown(
+        """
+        <div class="feature-card">
+
+        ### ⚡ Features
+
+        • Dialogue Summarization  
+        • Transformer Inference  
+        • Hugging Face Integration  
+        • Streamlit Deployment  
+
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
+
+
+# ============================================================
+# GENERATION SECTION
+# ============================================================
+
+if generate_button:
+
+    if user_input.strip() == "":
+
+        st.warning("⚠️ Please enter dialogue text.")
+
+    else:
+
+        with st.spinner("🧠 Generating intelligent summary..."):
+
+            time.sleep(1)
+
+            summary = summarizer.summarize(user_input)
+
+
+        st.markdown("---")
+
+
+        # OUTPUT SECTION
+
+        st.markdown(
+            """
+            <div class="summary-container">
+
+            <div class="summary-title">
+            📝 Generated Summary
+            </div>
+
+            """,
+            unsafe_allow_html=True,
+        )
+
+        st.markdown(
+            f'<div class="summary-text">{summary}</div>',
+            unsafe_allow_html=True,
+        )
+
+        st.markdown(
+            "</div>",
+            unsafe_allow_html=True,
+        )
+
+
+# ============================================================
+# FOOTER
+# ============================================================
+
+st.markdown("---")
+
+st.caption(
+    "Built using Transformers, PyTorch, Hugging Face, and Streamlit 🚀"
+)
+```
