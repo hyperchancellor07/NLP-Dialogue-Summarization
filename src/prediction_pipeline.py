@@ -26,7 +26,6 @@ class DialogueSummarizer:
 
         self.model = AutoModelForSeq2SeqLM.from_pretrained(
             MODEL_NAME,
-            use_safetensors=False,
         )
 
 
