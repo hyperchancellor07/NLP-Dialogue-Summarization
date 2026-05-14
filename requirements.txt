@@ -25,9 +25,7 @@ streamlit
 
 # Optional (safe to have, useful later)
 scikit-learn
-transformers
-sentencepiece
-streamlit
 torch
 accelerate
 huggingface_hub
+rank_bm25
